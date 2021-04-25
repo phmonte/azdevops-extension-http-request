@@ -1,0 +1,52 @@
+{
+  "id": "c9f85c90-a5db-11eb-9d3d-53cf3663d5f8",
+  "name": "SimpleHttpRequest",
+  "friendlyName": "SimpleHttpRequest",
+  "description": "'This task makes a simple http request and validate status code'",
+  "author": "'Pablo Monteiro'",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "0"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "SimpleHttpRequest $(message)",
+  "inputs": [
+    {
+      "name": "urlToRequest",
+      "type": "string",
+      "label": "Url that will be consulted",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Url that we will do the get and we wait for status code 200"
+    },
+    {
+      "name": "timeOutRequest",
+      "type": "int",
+      "label": "Request time out in minutes",
+      "defaultValue": 1,
+      "required": true,
+      "helpMarkDown": "Request time out in minutes"
+    },
+    {
+      "name": "interval",
+      "type": "int",
+      "label": "Interval between requests in seconds",
+      "defaultValue": 10,
+      "required": true,
+      "helpMarkDown": "Interval between requests in seconds"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "script-http-request.ps1"
+    }
+  }
+}
